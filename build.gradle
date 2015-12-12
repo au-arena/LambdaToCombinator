@@ -24,7 +24,7 @@ task run(type: JavaExec, dependsOn: classes) {
 /**
  * Generate a jar with with embedded libraries
  */
-task generateStandaloneJar(type: Jar) {
+task generateJar(type: Jar) {
     manifest {
         attributes  'Implementation-Title': 'Gradle Jar File Example',
                 'Main-Class': 'com.app.Manager'

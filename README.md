@@ -5,7 +5,9 @@ This program is a Scala implementation of the following hackerrank problem : [Do
 #Build
 At the root of the project type:
 
-```gradle generateJar```
+```./gradlew generateJar``` (on linux)
+
+```gradlew.bat generateJar``` (on windows)
 
 This gradle task builds a standalone jar in `build/libs/`. 
 
