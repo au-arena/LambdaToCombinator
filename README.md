@@ -55,12 +55,12 @@ B(CI)(B(BK)(C(CII)))
 
 The program operates for each lambda-expression the following syntactic transformation `T[ ]:L -> C` where L is the set of lambda-terms and C that of combinatory terms, according to the following algorithm:
 
-1. T[λx.(E x)] => T[E] (if x is not free in E)    [eta-reduction] 
+1. T[λx.(E x)] => T\[E\] (if x is not free in E)    [eta-reduction] 
 2. T[x] => x
 3. T[(E₁ E₂)] => (T[E₁] T[E₂])
 4. T[λx.E] => (K T[E]) (if x is not free in E)
 5. T[λx.x] => I
-6. T[λx.λy.E] => T[λx.T[λy.E]] (if x is free in E)
+6. T[λx.λy.E] => T\[λx.T\[λy.E\]\] (if x is free in E)
 7. T[λx.(E₁ E₂)] => (S T[λx.E₁] T[λx.E₂]) (if x is free in both E₁ and E₂)
 8. T[λx.(E₁ E₂)] => (C T[λx.E₁] T[E₂]) (if x is free in E₁ but not E₂)
 9. T[λx.(E₁ E₂)] => (B T[E₁] T[λx.E₂]) (if x is free in E₂ but not E₁)
