@@ -1,18 +1,19 @@
 
-This program is a Scala implementation of the following hackerrank problem : [Down with abstraction](https://www.hackerrank.com/challenges/down-with-abstractions). It consists of a simple CLI tool that transforms [lambda expressions](https://en.wikipedia.org/wiki/Lambda_calculus) to corresponding [combinators](https://en.wikipedia.org/wiki/Combinatory_logic).
+This program is a Scala implementation of the following hackerrank problem : [Down with abstraction](https://www.hackerrank.com/challenges/down-with-abstractions). It consists of a simple CLI tool transforming [lambda expressions](https://en.wikipedia.org/wiki/Lambda_calculus) into their corresponding [combinators](https://en.wikipedia.org/wiki/Combinatory_logic).
 
+# Getting started 
 
-#Build
+### Build
 At the root of the project type:
 
 ```./gradlew generateJar``` (on linux)
 
 ```gradlew.bat generateJar``` (on windows)
 
-This gradle task builds a standalone jar in `build/libs/`. 
+This gradle task builds a jar in `build/libs/`. 
 
 
-#Execute
+### Execute
 
 As the Scala library is embedded in the jar, it is possible to execute it using directly the following java command:
 
@@ -22,7 +23,7 @@ or by relying on a local Scala installation by typing:
 
 ```scala build/libs/LambdaToCombinator.jar --help```
 
-Regardless of the way the program is called, if the --help option is passed, the following message will be printed:
+The command above will print the message below:
 
 ```
 LambdaToCombinator 1.0 (Program converting lambda-expressions to SKIBC-basis combinators)
@@ -45,6 +46,7 @@ Usage: LambdaToCombinator [options]
         Print the help menu
 ```
 
+### Example
 For instance the following command will transform the input lambda expression to a combinator:
 
 ```
@@ -53,9 +55,9 @@ B(CI)(B(BK)(C(CII)))
 ```
 
 
-#Explanation
+# Explanation
 
-The program operates for each lambda-expression the following syntactic transformation `T[ ]:L -> C` where L is the set of lambda-terms and C that of combinatory terms, according to the following algorithm:
+The program operates for each lambda-expression the following syntactic transformation `T[ ]:L -> C` where `L` is the set of lambda-terms and `C` that of combinatory terms, according to the following algorithm:
 
 1. T[λx.(E x)] => T\[E\] (if x is not free in E)    [eta-reduction] 
 2. T[x] => x
